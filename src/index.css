@@ -20,14 +20,13 @@ code {
   border-radius: 5px;
   border: 2px solid #ffffff;
   padding: 25px;
-}
-
-.max_1 {
   max-width: 250px;
 }
 
-.max_2{
-  max-width: 500px;
+.modal_wea {
+  width: 100px;
+  height: auto;
+  text-align: center;
 }
 
 .length {
@@ -93,7 +92,7 @@ code {
   display: flex; 
 }
 
-.wrapper .top_navbar .top_menu ul li a {
+.wrapper .top_navbar .top_menu ul li {
   display: block;
   margin: 0 10px;
   width: 35px;
@@ -105,7 +104,7 @@ code {
   color: white;
 }
 
-.wrapper .top_navbar .top_menu ul li a:hover {
+.wrapper .top_navbar .top_menu ul li:hover {
   background:rgb(228, 237, 241);
   color: #0275d8;
 }

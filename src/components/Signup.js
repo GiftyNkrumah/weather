@@ -1,35 +1,33 @@
 import React, {useState, useContext} from 'react'
-// import {LoginContext} from '../contexts/LoginContext'
+import {LoginContext} from '../contexts/LoginContext'
 
 function Signup() {
 
-    // const {setLogged} = useContext(LoginContext)
-
-    const [user, setUser] = useState("")
+    const {setLogged, username, setUsername} = useContext(LoginContext)
     const [pass, setPass] = useState("")
     const [conf, setConf] = useState("")
-    const [email, setEmail] = useState("")
+    const [email, setEmail] = useState("") 
 
     function Validation () {
         
-        // // Check if password is equal to confirmation
-        // pass === conf ? 
-        // setLogged(true)
-        // : 
-        // alert("Password should be the same as confirmation")
+        // Check if password is equal to confirmation
+        pass === conf ? 
+        setLogged(true)
+        : 
+        alert("Password should be the same as confirmation")
         
     }
 
     return (
-        <div className="case max_1">
+        <div className="case">
             <h2>Register</h2>
             <form onSubmit={Validation}>
                 <div className="form-group">
                     <input 
                         type="text" 
                         className="form-control" 
-                        onChange={(e) => setUser(e.target.value)} 
-                        value={user} 
+                        onChange={(e) => setUsername(e.target.value)} 
+                        value={username} 
                         placeholder="Username"
                         required
                     />

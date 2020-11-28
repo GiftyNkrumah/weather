@@ -1,20 +1,19 @@
-import {useState, useContext} from 'react'
+import React, {useState, useContext} from 'react'
 import {Link} from 'react-router-dom'
-// import {LoginContext} from '../contexts/LoginContext'
+import {LoginContext} from '../contexts/LoginContext'
 
 function Login() {
     
-    // const {setLogged} = useContext(LoginContext)
-    const [username, setUsername] = useState("")
+    const {setLogged, username, setUsername} = useContext(LoginContext)
     const [password, setPassword] = useState("")
 
     function FormValidation () {
         // Check if username is equal to password
-            // username === password? setLogged(true) : alert("Username or password incorrect!")
+            username === password? setLogged(true) : alert("Username or password incorrect!")
         }
     
     return (
-        <div className="case max_1">
+        <div className="case">
             <h2>Log in</h2>
             <form onSubmit={FormValidation}>
                 <div className="form-group">
