@@ -1,8 +1,11 @@
 import Weather from './Weather'
+import LoginContextProvider from './contexts/LoginContext'
 
 function App() {
   return ( 
-    <Weather/>
+    <LoginContextProvider>
+      <Weather/>
+    </LoginContextProvider>
   )
 }
 

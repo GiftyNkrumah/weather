@@ -10,11 +10,11 @@ import {LoginContext} from './contexts/LoginContext'
 
 function Weather() {
 
-  // const {isLogged, setLogged, username} = useContext(LoginContext)
+  const {isLogged, setLogged, username} = useContext(LoginContext)
   
-  // function LogOut(event){
-  //   setLogged(false)
-  // }
+  function LogOut(event){
+    setLogged(false)
+  }
 
   return (
     <Router>
@@ -33,12 +33,12 @@ function Weather() {
                 </Link>
               </div>
               <ul>
-                {/* {isLogged?
-                  <li>{username}</li>
+                {isLogged?
+                  <li className="img">{username}</li>
                    : 
                   <li>Guest</li>
-                } */}
-                <li><i className="far fa-user" aria-hidden="true"></i></li>
+                }
+                <li><i className="far fa-user img" aria-hidden="true"></i></li>
               </ul>
             </div>
           </div>
@@ -70,7 +70,7 @@ function Weather() {
                 </li>
 
                 <div className="bottom">
-                  {/* {isLogged?
+                  {isLogged?
                   <>
                     <li>
                       <Link to="#">
@@ -80,7 +80,7 @@ function Weather() {
                       </Link>
                     </li>
 
-                    // Modal 
+                    {/* Modal  */}
                     <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div className="modal-dialog" role="document">
                         <div className="modal-content">
@@ -118,7 +118,7 @@ function Weather() {
                       </Link>
                     </li>
                   </>
-                }  */}
+                } 
                 </div>
             </ul>
           </div>

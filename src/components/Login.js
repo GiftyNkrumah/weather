@@ -7,9 +7,16 @@ function Login() {
     const {setLogged, username, setUsername} = useContext(LoginContext)
     const [password, setPassword] = useState("")
 
-    function FormValidation () {
+    function FormValidation (e) {
         // Check if username is equal to password
-            username === password? setLogged(true) : alert("Username or password incorrect!")
+            if (username === password) 
+            {
+                e.preventDefault()
+                setLogged(true) 
+            } else
+            {
+                alert("Username or password incorrect!")
+            }
         }
     
     return (

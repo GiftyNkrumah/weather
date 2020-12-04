@@ -8,14 +8,16 @@ function Signup() {
     const [conf, setConf] = useState("")
     const [email, setEmail] = useState("") 
 
-    function Validation () {
+    function Validation (e) {
         
         // Check if password is equal to confirmation
-        pass === conf ? 
-        setLogged(true)
-        : 
-        alert("Password should be the same as confirmation")
-        
+        if (pass === conf) 
+        {
+            e.preventDefault()
+            setLogged(true)
+        } else {
+            alert("Password should be the same as confirmation")
+        }
     }
 
     return (

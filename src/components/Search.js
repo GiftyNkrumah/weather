@@ -10,7 +10,15 @@ function Search() {
     const getWeather = (e) => {
         if (country && city) {
             e.preventDefault()
-            axios.get(`http://api.weatherstack.com/current?access_key=7b7e0aea38f1d4cbdd3fb0e4b8580dc4&query=${country}, ${city}`)        
+
+            let history = {
+                country: country,
+                city: city
+            }
+
+            // localStorage.setItem('hstry', JSON.stringify(history))
+
+            axios.get(`http://api.weatherstack.com/current?access_key=9810b9da9ee591e0e3f6388da24a6094&query=${country}, ${city}`)        
             .then(
                 (res) => {
                 setWeather(res.data)
@@ -63,7 +71,6 @@ function Search() {
                         <div className="modal-body">
                             <div className="container-fluid">    
                                 {
-                                    // 
                                     typeof weather !== undefined && weather !== null?
                                     <>
                                         <div className="row .d-flex">
