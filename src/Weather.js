@@ -72,11 +72,11 @@ function Weather() {
                 <div className="bottom">
                   {isLogged?
                   <>
-                    <li>
+                    <li data-toggle="modal" data-target="#exampleModal">
                       <Link to="#">
                         <span className="icon"></span>
                           <i className="fas fa-sign-out-alt" aria-hidden="true"></i>
-                        <span className="title" data-toggle="modal" data-target="#exampleModal">Sign out</span>
+                        <span className="title">Sign out</span>
                       </Link>
                     </li>
 

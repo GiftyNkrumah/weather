@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, Suspense } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import sad from '../images/sad.png'
@@ -19,7 +19,7 @@ function Home() {
         const Latitude = position.coords.latitude
         const Longitude = position.coords.longitude
 
-        console.log(Latitude, " ", Longitude)
+        console.log(Latitude, Longitude)
 
         axios.get(`http://api.weatherstack.com/current?access_key=9810b9da9ee591e0e3f6388da24a6094&query=${Latitude}, ${Longitude}`)        
             .then(
@@ -38,8 +38,9 @@ function Home() {
             <div className="container">
                 <div className="row">
                     <div className="home col-md-6">
+                        {/* <Suspense fallback={<h1>Loading... </h1>}> */}
                         {
-                        typeof weather !== undefined && typeof weather !== null?
+                        typeof weather !== undefined && weather !== null?
                             <>
                                 <b style={{fontSize:60}}>{weather.current.observation_time}</b>
                                 <div className="container">
@@ -71,6 +72,7 @@ function Home() {
                                 </div>
                             </>
                         }
+                        {/* </Suspense> */}
                     </div>
                     <div className="home col-md-6">
                         {

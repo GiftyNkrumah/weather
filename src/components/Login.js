@@ -6,7 +6,7 @@ function Login() {
     
     const {setLogged, username, setUsername} = useContext(LoginContext)
     const [password, setPassword] = useState("")
-
+ 
     function FormValidation (e) {
         // Check if username is equal to password
             if (username === password) 
