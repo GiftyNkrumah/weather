@@ -1,11 +1,13 @@
 import React, {useState, useContext} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 import {LoginContext} from '../contexts/LoginContext'
 
 function Login() {
     
     const {setLogged, username, setUsername} = useContext(LoginContext)
     const [password, setPassword] = useState("")
+
+    let history = useHistory()
  
     function FormValidation (e) {
         // Check if username is equal to password
@@ -13,6 +15,7 @@ function Login() {
             {
                 e.preventDefault()
                 setLogged(true) 
+                history.push("/")
             } else
             {
                 alert("Username or password incorrect!")

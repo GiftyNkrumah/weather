@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import Search from './components/Search'
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route, Link, useHistory} from 'react-router-dom'
 import logo from './images/logo.png'
 import Login from './components/Login'
 import Home from './components/Home'
@@ -11,9 +11,11 @@ import {LoginContext} from './contexts/LoginContext'
 function Weather() {
 
   const {isLogged, setLogged, username} = useContext(LoginContext)
+  let history = useHistory()
   
   function LogOut(event){
     setLogged(false)
+    history.push("/")
   }
 
   return (

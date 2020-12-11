@@ -1,5 +1,6 @@
 import React, {useState, useContext} from 'react'
 import {LoginContext} from '../contexts/LoginContext'
+import {useHistory} from 'react-router-dom'
 
 function Signup() {
 
@@ -8,6 +9,8 @@ function Signup() {
     const [conf, setConf] = useState("")
     const [email, setEmail] = useState("") 
 
+    let history = useHistory()
+
     function Validation (e) {
         
         // Check if password is equal to confirmation
@@ -15,6 +18,7 @@ function Signup() {
         {
             e.preventDefault()
             setLogged(true)
+            history.push("/")
         } else {
             alert("Password should be the same as confirmation")
         }
